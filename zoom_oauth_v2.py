@@ -4,11 +4,11 @@ from requests.auth import HTTPBasicAuth
 
 def get_access_token():
     # Set the client credentials
-    client_id = 'KNnATDQQE1fVZLnwUPQw'
-    client_secret = 'LymWlJzLKSahH4GQ0aNJ64aEkUxGZSPA'
+    client_id = 'XXXXXXXX'
+    client_secret = 'XXXXXXXX'
 
     # Set the authorization server's token endpoint URL
-    token_url = 'https://zoom.us/oauth/token?grant_type=account_credentials&account_id=Od1Y5-cqTaicWW5dwvcgKA'
+    token_url = 'https://zoom.us/oauth/token?grant_type=account_credentials&account_id=XXXXXXXX'
 
     # Send a POST request to the token endpoint to get the access token
     response = requests.post(token_url, auth=HTTPBasicAuth(client_id, client_secret))

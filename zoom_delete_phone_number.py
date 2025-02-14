@@ -93,5 +93,13 @@ def process_csv_batches(csv_file, batch_size=2):
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 csv_file_path = os.path.join(script_dir, "phonenumbers.csv")
+# Check if the file exists, if not, create it
+if not os.path.exists(csv_file_path):
+    with open(csv_file_path, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Name", "Phone Number"])  # Add header row
+    print(f"File created: {csv_file_path}")
+else:
+    print(f"File already exists: {csv_file_path}")
 
 process_csv_batches(csv_file_path, batch_size=2)

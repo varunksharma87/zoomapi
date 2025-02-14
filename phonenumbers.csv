@@ -1,7 +1,0 @@
-PhoneNumber,Response,Result,Remarks
-+61285291833,400,Failed,Phone number does not exist: 61285291833.
-+61285265447,400,Failed,Phone number does not exist: 61285265447.
-+61285264712,400,Failed,Phone number has already been assigned.
-+61285291736,400,Failed,Phone number has already been assigned.
-+61285291877,400,Failed,Phone number does not exist: 61285291877.
-+61285265689,400,Failed,Phone number does not exist: 61285265689.

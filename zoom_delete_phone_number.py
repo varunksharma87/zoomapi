@@ -97,7 +97,7 @@ csv_file_path = os.path.join(script_dir, "phonenumbers.csv")
 if not os.path.exists(csv_file_path):
     with open(csv_file_path, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["Name", "Phone Number"])  # Add header row
+        writer.writerow(["PhoneNumber","Response","Result","Remarks"])  # Add header row
     print(f"File created: {csv_file_path}")
 else:
     print(f"File already exists: {csv_file_path}")

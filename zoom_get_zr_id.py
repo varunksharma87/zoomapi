@@ -2,7 +2,7 @@ import os
 import requests
 import csv
 from requests.auth import HTTPBasicAuth
-from zoom_oauth_v2 import check_access_token
+from zoom_oauth import check_access_token
 
 def get_zr_ids():
     access_token = check_access_token()

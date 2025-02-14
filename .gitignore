@@ -1,0 +1,23 @@
+# Ignore environment variables
+.env
+access_token.txt
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+.env/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.swp
+.DS_Store

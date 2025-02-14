@@ -1,17 +1,26 @@
 import os
 import requests
 from requests.auth import HTTPBasicAuth
+from dotenv import load_dotenv  # ✅ Import load_dotenv
 
 def get_access_token():
+    load_dotenv()
     # Set the client credentials
-    client_id = 'XXXXXXXX'
-    client_secret = 'XXXXXXXX'
+    # Get values from environment variables
+    client_id = os.getenv('CLIENT_ID')
+    client_secret = os.getenv('CLIENT_SECRET')
+    account_id = os.getenv('ACCOUNT_ID')
+
+    print(f'{client_id},{client_secret},{account_id}')
 
     # Set the authorization server's token endpoint URL
-    token_url = 'https://zoom.us/oauth/token?grant_type=account_credentials&account_id=XXXXXXXX'
+    token_url = f"https://zoom.us/oauth/token?grant_type=account_credentials&account_id={account_id}"
 
     # Send a POST request to the token endpoint to get the access token
-    response = requests.post(token_url, auth=HTTPBasicAuth(client_id, client_secret))
+    response = requests.post(
+        token_url,
+        auth=HTTPBasicAuth(client_id, client_secret)
+    )
 
     # Check if the request was successful
     if response.status_code == 200:
@@ -29,7 +38,7 @@ def check_access_token():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Create the file path in the same directory as the script
-    token_file_path = os.path.join(script_dir, 'access_token.txt')
+    token_file_path = os.path.join(script_dir, '.token')
 
     # Check if the token file exists. If not create one.
     if not os.path.exists(token_file_path):
